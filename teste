@@ -1,0 +1,16 @@
+version: 1
+
+# Objeto 1: cn=00003971562,ou=usuarios,dc=uerr,dc=edu,dc=br
+dn: cn=00003971562,ou=usuarios,dc=uerr,dc=edu,dc=br
+cn: 00003971562
+gidnumber: 1417
+givenname: MARCILIO
+homedirectory: /home/users/00003971562
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: CHIACCHIO
+uid: 00003971562
+uidnumber: 1417
+userpassword: {MD5}Y6QmCal/q5GWBs4a6gvYoQ==
+
