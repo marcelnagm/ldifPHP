@@ -84,7 +84,8 @@ foreach ($result as $row) {
                     ->addAttribute('uid', $user->username)
                     ->addAttribute('uidnumber', $user->username)
                     ->addAttribute('userpassword', '123')
-                    ->addAttribute('homedirectory', '/home/aluno');
+                    ->addAttribute('homedirectory', '/home/aluno')
+                    ->addAttribute('mail', $mat->email);
 
 
 
