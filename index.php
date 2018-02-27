@@ -81,9 +81,9 @@ foreach ($result as $row) {
                     ->addAttribute('givenname', $student->name)
                     ->addAttribute('objectclass', array('inetOrgPerson', 'posixAccount', 'top'))
                     ->addAttribute('sn',$sn )
-                    ->addAttribute('uid', $user->username)
+                    ->addAttribute('uid', $cn)
                     ->addAttribute('uidnumber', $user->username)
-                    ->addAttribute('userpassword', '123')
+                    ->addAttribute('userpassword', md5('123'))
                     ->addAttribute('homedirectory', '/home/aluno')
                     ->addAttribute('mail', $mat->email);
 
@@ -103,5 +103,6 @@ foreach ($result as $row) {
 ////file_put_contents('/path/to/ldif.txt', $ldif->toString());
 //// Output the LDIF to a string and do whatever you need with it...
 $ldifData = $ldif->toString();
-echo $ldifData;
+//echo $ldifData;
+file_put_contents('alunos.ldif', $ldifData);
 // cn=00387046259,ou=dti,dc=uerr,dc=edu,dc=br
