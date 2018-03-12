@@ -75,6 +75,7 @@ foreach ($result as $row) {
         $cn = str_replace('.','',str_replace('-', '', $student->cpf));
         $sn = explode(' ', $student->name);
         $sn = $sn[count($sn)-1];
+        if($sn == "") $sn = 'Computador';
             $entry = $ldif->entry()->add('cn=' . $cn . ',ou=alunos,dc=uerr,dc=edu,dc=br')
                     ->addAttribute('cn', $cn)
                     ->addAttribute('gidnumber', $user->username)
@@ -87,7 +88,7 @@ foreach ($result as $row) {
                     ->addAttribute('homedirectory', '/home/aluno')
                     ->addAttribute('mail', $mat->email);
 
-
+        
 
 // Add the created entry to the LDIF. This method is variadic, so add as many entries at a time as you like.
             $ldif->addEntry($entry);
